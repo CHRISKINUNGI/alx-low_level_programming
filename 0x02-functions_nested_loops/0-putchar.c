@@ -11,14 +11,15 @@
 
 int main(void)
 {
+	int i;
 	char string[8] = "_putchar";
 
-	for (int i = 0; i < 8; i++)
+	for (i = 0; i < 8; i++)
 	{
 		putchar (string[i]);
 	}
 
-	putchar ('\n')
+	putchar ('\n');
 
 	return (0);
 }
