@@ -10,7 +10,7 @@
  *
  */
 
-int _islower(int c)
+char _islower(char c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (1);
