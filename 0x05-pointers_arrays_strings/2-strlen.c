@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 /**
- * _strlen: gets the lenth of a string
+ * _strlen - gets the lenth of a string
  *
  * @s: array
  *
