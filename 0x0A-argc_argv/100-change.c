@@ -3,7 +3,7 @@
 /**
  * main - entry point of a program
  *
- * Description -  program that prints the minimum number of coins to make change for an amount of money.
+ * Description - program that prints the minimum number of coins given amount
  *
  * @argc: int variable for number of arguments
  *
@@ -15,13 +15,13 @@
 
 int main(int argc, char *argv[])
 {
-       	int amountinCents, numberofCoins;
+	int amountinCents, numberofCoins;
 
 	if (argc != 2)
-        {
-                printf("Error\n");
-                return (0);
-        }
+	{
+		printf("Error\n");
+		return (0);
+	}
 
 	numberofCoins = 0;
 	amountinCents = atoi(argv[1]);
