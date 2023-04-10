@@ -15,7 +15,7 @@
 
 int main(int argc, char *argv[])
 {
-	int multiplicationResult, firstArg, secondArg;
+	int multiplicationResult;
 
 	if (argc < 2)
 	{
@@ -25,13 +25,10 @@ int main(int argc, char *argv[])
 
 	else
 	{
-		firstArg = atoi(argv[1]);
-		secondArg = atoi(argv[2]);
-
-		multiplicationResult = firstArg * secondArg;
+		multiplicationResult = atoi(argv[1]) *  atoi(argv[2]);
 
 		printf("%d\n", multiplicationResult);
 
-		return (0);
 	}
+	return (0);
 }
