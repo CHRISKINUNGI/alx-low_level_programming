@@ -5,6 +5,7 @@
  * is_prime_number_tester - checks if a number is prime
  * @n: number to check
  * @i: number to test modulate
+ * @x: number
  *
  * Return: 1 if prime, 0 otherwise
  */
