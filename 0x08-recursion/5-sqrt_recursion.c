@@ -29,7 +29,7 @@ int _sqrt_finder(int n, int min, int max)
 }
 
 /**
- * _sqrt_recursion - function that returns the natural square root 
+ * _sqrt_recursion - function that returns the natural square root
  *
  * @n: int variable to num whos sqrt is being calculated
  *
