@@ -13,7 +13,7 @@ int is_prime_number_tester(int n, int i, int x)
 {
 	if (x != 0)
 	{
-		return 1;
+		return (1);
 	}
 
 	if (n % i == 0)
