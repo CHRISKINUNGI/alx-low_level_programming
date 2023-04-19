@@ -11,9 +11,17 @@ void f(char *name)
 {
 	int count;
 
-	for (count = 0; *name != '\0'; count++)
+	if (name == NULL || f == NULL)
 	{
-		putchar(name[count]);
+		return;
+	}
+
+	else
+	{
+		for (count = 0; *name != '\0'; count++)
+		{
+			putchar(name[count]);
+		}
 	}
 }
 

@@ -14,5 +14,7 @@ int op_mul(int a, int b);
 int op_div(int a, int b);
 int op_mod(int a, int b);
 int _putchar(char c);
+void action(int *array);
+void f(char *name);
 
 #endif
