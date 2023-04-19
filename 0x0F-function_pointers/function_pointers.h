@@ -16,5 +16,6 @@ int op_mod(int a, int b);
 int _putchar(char c);
 void action(int *array);
 void f(char *name);
+int main(int argc, char *argv[]);
 
 #endif
