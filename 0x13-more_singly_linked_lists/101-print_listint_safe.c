@@ -1,9 +1,6 @@
 #include "lists.h"
-
-/**
- * check_cycle - checks if a singly linked list has a cycle in it
- * @list: pointer to the head of the list
- */
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * print_listint_safe - prints a listint_t linked list
@@ -11,20 +8,39 @@
  *
  * Return: the number of nodes in the list
  */
-
 size_t print_listint_safe(const listint_t *head)
 {
-	int counter;
-	const listint_t *tempNode;
+	const listint_t *firstNode, *lastNode;
+	size_t myCount;
+
+	myCount = 0;
+	firstNode = head;
+	lastNode = head;
 
 	if (head == NULL)
-		return (98);
-	tempNode = head;
-	do {
-		printf("[%p] %d\n", &tempNode, tempNode->n);
-		tempNode = tempNode->next;
-		counter++;
-	} while (tempNode != head);
+		exit(98);
 
-	return (counter);
+	while (firstNode && lastNode && lastNode->next)
+	{
+		firstNode = firstNode->next;
+		lastNode = lastNode->next->next;
+		myCount++;
+
+		if (firstNode == lastNode)
+		{
+			printf("[%p] %d\n", (void *)firstNode, firstNode->n);
+			firstNode = firstNode->next;
+			while (firstNode != lastNode)
+			{
+				printf("[%p] %d\n", (void *)firstNode, firstNode->n);
+				firstNode = firstNode->next;
+				myCount++;
+			}
+			printf("[%p] %d\n", (void *)firstNode, firstNode->n);
+			printf("-> [%p] %d\n", (void *)lastNode, lastNode->n);
+			return (myCount);
+		}
+		printf("[%p] %d\n", (void *)firstNode, firstNode->n);
 	}
+	return (myCount);
+}
