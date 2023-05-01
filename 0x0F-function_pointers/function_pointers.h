@@ -17,5 +17,5 @@ int _putchar(char c);
 void action(int *array);
 void f(char *name);
 int main(int argc, char *argv[]);
-
+int int_index(int *array, int size, int (*cmp)(int));
 #endif
