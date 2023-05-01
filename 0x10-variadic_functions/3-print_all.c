@@ -2,46 +2,47 @@
 
 /**
  * print_all - prints anything
+ * @format: list of types of arguments passed to the function
  *
- * @format:
- * @
-*/
+ * Return: void
+ */
 
 void print_all(const char * const format, ...)
 {
-	int i;
+	va_list myStruct;
+	int counter;
 	char *s;
 
-	va_list(args);
+	counter = 0;
 
-	va_start(args, format);
-	while (format && format[i])
+	va_start(myStruct, format);
+	while (format && format[counter])
 	{
-		switch (format[i])
+		switch (format[counter])
 		{
 		case 'c':
-			printf("%c", va_arg(args, int));
+			printf("%c", va_arg(myStruct, int));
 			break;
 		case 'i':
-			printf("%d", va_arg(args, int));
+			printf("%d", va_arg(myStruct, int));
 			break;
 		case 'f':
-			printf("%f", va_arg(args, double));
+			printf("%f", va_arg(myStruct, double));
 			break;
 		case 's':
-			s = va_arg(args, char *);
+			s = va_arg(myStruct, char *);
 			if (s == NULL)
-				printf("(nil)");
+				s = "(nil)";
 			printf("%s", s);
 			break;
 		default:
-			i++;
+			counter++;
 			continue;
 		}
-		if (format[i + 1])
+		if (format[counter + 1])
 			printf(", ");
-		i++;
+		counter++;
 	}
 	printf("\n");
-	va_end(args);
+	va_end(myStruct);
 }
