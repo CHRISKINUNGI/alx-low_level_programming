@@ -8,31 +8,31 @@
  * Return: void
  *
  */
-
 void print_binary(unsigned long int n)
 {
-	int firstCounter, secondCounter;
-	unsigned long int binaryFormat;
+	/**
+	 *count_ones used to skip leading zeros when printing the
+	 *binary representation.
+	 *
+	 */
+	int counter, count_ones = 0;
+	unsigned long int binaryValue;
 
-	secondCounter = 0;
-	firstCounter = 0;
-	binaryFormat = 0;
-
-	if (n == 0)
+	/* counter is 64; number of bits for unsigned long int*/
+	for (counter = 63; counter >= 0; counter--)
 	{
-		putchar('0');
-		return;
+		binaryValue = n >> counter;
+
+		if (binaryValue & 1)
+		{
+			_putchar('1');
+			count_ones++;
+		}
+		else if (count_ones)
+			_putchar('0');
 	}
 
-	while (n > 0)
-	{
-		binaryFormat = n & 1;
-
-		if (binaryFormat == 1)
-			secondCounter = 1;
-		if (secondCounter == 1)
-			putchar(binaryFormat + '0');
-
-		n = n >> 1;
-		firstCounter++;	}
+	/*prints 0 if no 1's encountered*/
+	if (!count_ones)
+		_putchar('0');
 }
