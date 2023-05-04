@@ -23,12 +23,12 @@ void print_binary(unsigned long int n)
 		putchar('0');
 		return;
 	}
-	
+
 	while (n > 0)
 	{
 		binaryFormat = n & 1;
 
-		if (binaryFormat == 0)
+		if (binaryFormat == 1)
 			secondCounter = 1;
 		if (secondCounter == 1)
 			putchar(binaryFormat + '0');
