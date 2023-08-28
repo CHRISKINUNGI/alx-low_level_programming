@@ -1,26 +1,46 @@
+# Compiler
 CC = gcc
+
+# Source files
 SRC = main.c file1.c file2.c
+
+# Object files
 OBJ = $(SRC:.c=.o)
+
+# Executable name
 NAME = school
-RM = rm -f
+
+# Program to delete files
+RM = /bin/rm -f
+
+# Compiler flags
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
+# Phony targets
 .PHONY: all clean oclean fclean re
 
+# Default target
 all: $(NAME)
 
+# Rule to build the executable
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+    $(CC) $(CFLAGS) -o $@ $^
 
+# Rule to compile source files
+%.o: %.c m.h
+    $(CC) $(CFLAGS) -c -o $@ $<
+
+# Clean Emacs, Vim, and executable files
 clean:
-	$(RM) $(OBJ) $(NAME) *~ \#*\#
+    $(RM) *~ $(NAME)
 
+# Clean object files
 oclean:
-	$(RM) $(OBJ)
+    $(RM) $(OBJ)
 
-fclean: clean
+# Clean Emacs, Vim, executable files, and object files
+fclean: clean oclean
 
+# Force recompilation of all source files
 re: fclean all
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
